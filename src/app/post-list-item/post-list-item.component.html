@@ -1,0 +1,13 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0}">
+        <span class="h2" [ngStyle]="{color: getColor()}">{{ title }} </span>   
+
+        <span class="pull-right h4">{{createdAt | date:'MM/dd/yyyy, hh:mm' | uppercase}}</span>
+
+        <p>{{content}}</p>
+
+        <button class="btn btn-success" (click)="onLike()">Like</button>
+        <button class="btn btn-danger" (click)="onHate()">Hate</button>
+        <span class="badge pull-left">{{ loveIts }}</span>
+</li>
